@@ -3,7 +3,7 @@
 * Autor: _Krzysztof Molenda_
 * Wersja: 2019-10-03
 
-[Treść ćwiczenia](../ReadMe.md)
+[Treść ćwiczenia](index.md)
 
 ## Krok 5 - własna generyczna metoda sortująca
 

@@ -3,7 +3,7 @@
 * Autor: _Krzysztof Molenda_
 * Wersja: 2019-10-03
 
-[Treść ćwiczenia](../ReadMe.md)
+[Treść ćwiczenia](index.md)
 
 ## Krok 1 - realizacja klasy, implementacja pojęcia "taki sam"
 
