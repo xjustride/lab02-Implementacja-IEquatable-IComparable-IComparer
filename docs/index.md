@@ -3,37 +3,6 @@
 * Autor: _Krzysztof Molenda_
 * Wersja: 2019-10-03
 
-Celem ćwiczenia jest nabycie umiejętności w zakresie tworzenia "dobrze uformowanych typów" (_well formed types_) i implementowania podstawowych interfejsów umożliwiających porównywanie obiektów i stosowanie bibliotecznych algorytmów (sortowanie, wyszukiwanie).
-
-Po wykonaniu ćwiczenia powinieneś:
-
-* umieć implementować równość obiektów (w sensie "taki sam") - implementacja `IEquatable<T>`, przesłonięcie `Equals`, `GetHashCode`,
-
-* umieć określać naturalny porządek dla projektowanego typu - implementacja `IComparable` i wykorzystać go w procesie sortowania i wyszukiwania,
-
-* umieć określać porządek w zbiorze elementów danego typu poprzez wykorzystanie interfejsu `IComparer` oraz delegata `Comparison` i wykorzystać go w procesie sortowania i wyszukiwania,
-
-* umieć zaprogramować prostą metodę generyczną (na przykładzie metody sortującej),
-
-* umieć wykorzystać w praktyce implementację algorytmu wyszukiwania binarnego (metoda `BinarySearch` w klasie `Array` oraz `List<T>`),
-
-* poznać środowisko programowania VisualCode w aspekcie programowania w C#.
-
-> Ćwiczenie wykonaj wykorzystując lekkie środowisko VS Code z dodatkiem C# ( [Get started with C# and Visual Studio Code](https://docs.microsoft.com/pl-pl/dotnet/core/tutorials/with-visual-studio-code) ). Należy zainstalować dodatek: [C# for Visual Studio Code (powered by OmniSharp) by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Dodatkowo, możesz zainstalować dodatki:
-> * [vscode-solution-explorer by Fernando Escolar](https://marketplace.visualstudio.com/items?itemName=fernandoescolar.vscode-solution-explorer)
-> * [.NET Core Test Explorer](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer)
-> 
-> Wszystkie polecenia tworzenia czy uruchamiania możesz jednak wydawać z poziomu terminala. Więcej informacji: <https://docs.microsoft.com/en-US/dotnet/core/tools/> (polecenia: <kbd>dotnet new sln</kbd>, <kbd>dotnet new console</kbd>, <kbd>dotnet new classlib</kbd>, <kbd>dotnet new mstest</kbd>, <kbd>dotnet new xunit</kbd>, <kbd>dotnet add ...</kbd>, <kbd>dotnet run</kbd>, <kbd>dotnet test</kbd>, ... ).
-> 
-> Inne rozszerzenia VS Code dla programisty .Net znajdziesz w [Top 5  VS Code Extensions for .Net Core](https://marcroussy.com/2018/03/10/top-5-visual-studio-code-extensions-for-dotnetcore/).
-> Więcej informacji o pracy z C# z wykorzystaniem VS Code w dokumentacji Microsoft: [VS Code. Working with C#](https://code.visualstudio.com/docs/languages/csharp)
-
-Obowiązkowa literatura: Michaelis, Rozdział 10. Well formed types
-
----
-
-Wykonaj kolejno podane [kroki](/docs/index.md>).
-
 ## Krok 1 - realizacja klasy, implementacja pojęcia "taki sam"
 
 1. Utwórz klasę `Pracownik` opisującą obiekt, zawierający:
@@ -69,7 +38,7 @@ Wykonaj kolejno podane [kroki](/docs/index.md>).
 
 10. Przetestuj w `Main()` poprawność powyższych implementacji.
 
-[Kod po kroku 1](etapy/krok1.md)
+[Kod po kroku 1](krok1.md)
 
 ---
 
@@ -89,7 +58,7 @@ Wykonaj kolejno podane [kroki](/docs/index.md>).
 
 5. Posortuj listę według naturalnego porządku zdefiniowanego w klasie `Pracownik`.
 
-[Kod po kroku 2](etapy/krok2.md)
+[Kod po kroku 2](krok2.md)
 
 ---
 
@@ -108,7 +77,7 @@ Dla listy utworzonej w poprzednim kroku wykonaj:
 
 3. Posortuj listę (metoda z `Comparison`) kolejno: malejąco według wynagrodzenia, później rosnąco według czasu zatrudnienia.
 
-[Kod po kroku 3](etapy/krok3.md)
+[Kod po kroku 3](krok3.md)
 
 ---
 
@@ -118,7 +87,7 @@ Lista pracowników jest typu `List<Pracownik>`, ale również obiektem typu `IEn
 
 > Musisz na początku kodu programu użyć dyrektywy `using System.Linq`.
 
-[Kod po kroku 4](etapy/krok4.md)
+[Kod po kroku 4](krok4.md)
 
 ---
 
@@ -143,7 +112,7 @@ Każdy z algorytmów sortowania (uniwersalny) wymagać będzie porównywania ora
 
 Sprawdź działanie swoich algorytmów na liście obiektów oraz na liście elementów typu strukturalnego (np. `int`).
 
-[Kod po kroku 5](etapy/krok5.md)
+[Kod po kroku 5](krok5.md)
 
 ---
 
