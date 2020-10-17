@@ -32,4 +32,4 @@ Obowiązkowa literatura: Michaelis, Rozdział 10. Well formed types
 
 ---
 
-Wykonaj kolejno podane [kroki](./docs/index.md>).
+Wykonaj kolejno podane [kroki](./docs/index.md).
