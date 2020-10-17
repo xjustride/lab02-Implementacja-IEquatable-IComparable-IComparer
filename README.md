@@ -25,8 +25,8 @@ Po wykonaniu ćwiczenia powinieneś:
 > 
 > Wszystkie polecenia tworzenia czy uruchamiania możesz jednak wydawać z poziomu terminala. Więcej informacji: <https://docs.microsoft.com/en-US/dotnet/core/tools/> (polecenia: <kbd>dotnet new sln</kbd>, <kbd>dotnet new console</kbd>, <kbd>dotnet new classlib</kbd>, <kbd>dotnet new mstest</kbd>, <kbd>dotnet new xunit</kbd>, <kbd>dotnet add ...</kbd>, <kbd>dotnet run</kbd>, <kbd>dotnet test</kbd>, ... ).
 > 
-> Inne rozszerzenia VS Code dla programisty .Net znajdziesz w [Top 5  VS Code Extensions for .Net Core](https://marcroussy.com/2018/03/10/top-5-visual-studio-code-extensions-for-dotnetcore/).
-> Więcej informacji o pracy z C# z wykorzystaniem VS Code w dokumentacji Microsoft: [VS Code. Working with C#](https://code.visualstudio.com/docs/languages/csharp)
+> Opisy innych rozszerzeń VS Code przydatnych dla programisty .Net znajdziesz w [Top 5  VS Code Extensions for .Net Core](https://marcroussy.com/2018/03/10/top-5-visual-studio-code-extensions-for-dotnetcore/).
+> Więcej informacji o pracy z C# z wykorzystaniem VS Code znajdziesz w dokumentacji Microsoft: [VS Code. Working with C#](https://code.visualstudio.com/docs/languages/csharp)
 
 Obowiązkowa literatura: Michaelis, Rozdział 10. Well formed types
 
