@@ -15,7 +15,7 @@ namespace cs_lab02_implementacjainterfejsów
 
 		}
 
-		DateTime DataZatrudnienia
+		public DateTime DataZatrudnienia
 		{
 			get { return DataZatrudnienia; }
 			set
