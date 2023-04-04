@@ -8,24 +8,28 @@ namespace cs_lab02_implementacjainterfejsów
 {
 	public class Pracownik
 	{
+		private string _nazwisko;
+
 		public string Nazwisko
 		{
-			get { return Nazwisko; }
-			set { Nazwisko = value.Trim(); }
-
+			get { return _nazwisko; }
+			set { _nazwisko = value.Trim(); }
 		}
 
+		private DateTime dataZatrudnienia;
 		public DateTime DataZatrudnienia
 		{
-			get { return DataZatrudnienia; }
+			get { return dataZatrudnienia; }
 			set
 			{
-				if (DataZatrudnienia > DateTime.Now)
+				if (value > DateTime.Now)
 				{
 					throw new ArgumentException();
 				}
+				dataZatrudnienia = value;
 			}
 		}
+
 
 		private decimal _wyn;
 
