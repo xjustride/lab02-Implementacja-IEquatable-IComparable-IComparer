@@ -1,11 +1,12 @@
 using System;
 
-public class Pracownik
+public class Pracownik : IEquatable<Pracownik>
 {
 	private string nazwisko;
 	private DateTime dataZatrudnienia;
 	private decimal wynagrodzenie;
 
+	
 	public Pracownik(string nazwisko, DateTime dataZatrudnienia, decimal wynagrodzenie)
 	{
 		this.nazwisko = nazwisko.Trim();
@@ -51,7 +52,6 @@ public class Pracownik
 	        TimeSpan czas = DateTime.Now - DataZatrudnienia;
             int dni = (int)czas.TotalDays;
             int miesiace = (int)Math.Round((double)dni / 30);
-    
             return miesiace;
         }
     }
@@ -59,6 +59,37 @@ public class Pracownik
 
 	public override string ToString()
 	{
-		return $"{Nazwisko}, {DataZatrudnienia.ToString("dd MMM yyyy")}, {Wynagrodzenie} PLN";
+		if (CzasZatrudnienia > 20 && CzasZatrudnienia % 2 == 0)
+		{
+			return ($"{Nazwisko}, {DataZatrudnienia.ToString("dd MMM yyyy")}, {Wynagrodzenie} PLN, {CzasZatrudnienia} miesiace");
+		}
+		else
+		{
+			return (
+				$"{Nazwisko}, {DataZatrudnienia.ToString("dd MMM yyyy")}, {Wynagrodzenie} PLN, {CzasZatrudnienia} miesiecy");
+		}
+		
+	}
+
+	public bool Equals(Pracownik? other)
+	{
+		if (ReferenceEquals(null, other)) return false;
+		if (ReferenceEquals(this, other)) return true;
+		return nazwisko == other.nazwisko && dataZatrudnienia.Equals(other.dataZatrudnienia) && wynagrodzenie == other.wynagrodzenie;
+	}
+
+	public override bool Equals(object? obj)
+	{
+		if (ReferenceEquals(null, obj)) return false;
+		if (ReferenceEquals(this, obj)) return true;
+		if (obj.GetType() != this.GetType()) return false;
+		return Equals((Pracownik)obj);
+	}
+
+	public override int GetHashCode()
+	{
+		return HashCode.Combine(nazwisko, dataZatrudnienia, wynagrodzenie);
 	}
 }
+
+
