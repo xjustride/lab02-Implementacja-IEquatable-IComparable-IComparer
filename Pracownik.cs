@@ -1,48 +1,64 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace cs_lab02_implementacjainterfejsów
+public class Pracownik
 {
-	public class Pracownik
+	private string nazwisko;
+	private DateTime dataZatrudnienia;
+	private decimal wynagrodzenie;
+
+	public Pracownik(string nazwisko, DateTime dataZatrudnienia, decimal wynagrodzenie)
 	{
-		private string _nazwisko;
-
-		public string Nazwisko
+		this.nazwisko = nazwisko.Trim();
+		if (dataZatrudnienia > DateTime.Now)
 		{
-			get { return _nazwisko; }
-			set { _nazwisko = value.Trim(); }
+			throw new ArgumentException("Data zatrudnienia nie może być późniejsza niż dzisiaj.");
 		}
+		this.dataZatrudnienia = dataZatrudnienia;
+		this.wynagrodzenie = (wynagrodzenie < 0) ? 0 : wynagrodzenie;
+	}
 
-		private DateTime dataZatrudnienia;
-		public DateTime DataZatrudnienia
+	public Pracownik() : this("Anonim", DateTime.Now, 0) { }
+
+	public string Nazwisko
+	{
+		get { return nazwisko; }
+		set { nazwisko = value.Trim(); }
+	}
+
+	public DateTime DataZatrudnienia
+	{
+		get { return dataZatrudnienia; }
+		set
 		{
-			get { return dataZatrudnienia; }
-			set
+			if (value > DateTime.Now)
 			{
-				if (value > DateTime.Now)
-				{
-					throw new ArgumentException();
-				}
-				dataZatrudnienia = value;
+				throw new ArgumentException("Data zatrudnienia nie może być późniejsza niż dzisiaj.");
 			}
+			dataZatrudnienia = value;
 		}
+	}
+
+	public decimal Wynagrodzenie
+	{
+		get { return wynagrodzenie; }
+		set { wynagrodzenie = (value < 0) ? 0 : value; }
+	}
+
+	public int CzasZatrudnienia
+    {
+        get
+        {
+	        TimeSpan czas = DateTime.Now - DataZatrudnienia;
+            int dni = (int)czas.TotalDays;
+            int miesiace = (int)Math.Round((double)dni / 30);
+    
+            return miesiace;
+        }
+    }
 
 
-		private decimal _wyn;
-
-		public decimal Wynagrodzenie
-		{
-			get => _wyn;
-			set => _wyn = (value < 0) ? 0 : value;
-			// {
-			//     if (value < 0) _wyn = 0;
-			//     else _wyn = value;
-			// }
-		}
-		public override string ToString() => ($"{Nazwisko}, {DataZatrudnienia: dd MMM yyyy}, {Wynagrodzenie} PLN");
+	public override string ToString()
+	{
+		return $"{Nazwisko}, {DataZatrudnienia.ToString("dd MMM yyyy")}, {Wynagrodzenie} PLN";
 	}
 }
-
